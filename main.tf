@@ -46,7 +46,6 @@ resource "aws_rds_cluster" "main" {
   vpc_security_group_ids = [aws_security_group.main.id]
   skip_final_snapshot = var.skip_final_snapshot
   tags        = merge(local.tags, { name = "${local.name_prefix}-cluster" })
-  kms_key_id = var.kms_key_id
   storage_encrypted = true
 }
 
